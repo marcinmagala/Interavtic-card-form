@@ -60,7 +60,8 @@ main {
 }
 
 .img-card-text {
-  color: hsl(270, 3%, 87%);
+  color: hsl(270, 3%, 87%) !important;
+  text-decoration: none !important;
   align-self: flex-end;
   font-weight: 300;
 }
