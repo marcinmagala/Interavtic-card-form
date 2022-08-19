@@ -21,22 +21,11 @@
     />
 
     <title>Frontend Mentor | Interactive card details form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!-- <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style> -->
   </head>
   <body>
     <main>
       <div class="app">
-        <div class="app-images form-submit">
+        <div class="app-images">
           <div class="img-card-front">
             <img src="images/card-logo.svg" alt="card-logo" />
             <span class="img-card-text img-card-number"
@@ -49,7 +38,7 @@
         </div>
         <div class="app-form">
           <form action="">
-            <div class="input input-fullname">
+            <div class="cvc-remover input input-fullname">
               <label class="form-label" for="fullname">Cardholder Name</label>
               <input
                 type="text"
@@ -59,7 +48,7 @@
                 required
               />
             </div>
-            <div class="input input-card_number">
+            <div class="cvc-remover input input-card_number">
               <label class="form-label" for="cardnumber">Card number</label>
               <input
                 type="number"
@@ -70,7 +59,7 @@
                 required
               />
             </div>
-            <div class="input input-exp">
+            <div class="cvc-remover input input-exp">
               <label class="form-label" for="MM">Exp. Date (MM/YY)</label>
               <div>
                 <input
@@ -93,7 +82,7 @@
                 />
               </div>
             </div>
-            <div class="input input-cvc">
+            <div class="cvc-remover input input-cvc">
               <label class="form-label" for="CVC">CVC</label>
               <input
                 type="number"
@@ -106,12 +95,7 @@
             </div>
             <div class="button-confirm">
               <input type="submit" name="submit" id="submit" value="Confirm" />
-              <!-- <div class="button-notallowed"></div> -->
             </div>
-            <!-- <div class="checkbox">
-              <label for="checkbox">Potwierdzam poprawność danych</label>
-              <input type="checkbox" name="checkbox" id="checkbox" required />
-            </div> -->
           </form>
         </div>
         <div class="app-form-complate form-submit">
@@ -128,37 +112,18 @@
     </main>
     <script src="script.js"></script>
 
-    <!-- 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start 
-
-  Thank you!
-  We've added your card details
-  Continue -->
-
     <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
   </body>
 </html>
+
+<!-- 
+  1. Naprawić walidacje.
+  2. RegEx przy imieniu.
+  3. Ładne przejście - animacja.
+  4. Media queries - RWD.
+  5. Netlify.
+  6. Strona portfolio.
+ -->
