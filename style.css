@@ -167,6 +167,19 @@ input::placeholder {
   color: #bbb;
 }
 
+.confirmCheckbox {
+  display: flex;
+  grid-column: 1/-1;
+  font-size: 12px;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+
+.confirmCheckbox input {
+  width: 12px;
+  height: 12px;
+}
+
 .input {
   display: flex;
   flex-direction: column;

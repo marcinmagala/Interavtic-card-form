@@ -11,6 +11,7 @@ const YYexp = document.getElementById("YY");
 const MMexp = document.getElementById("MM");
 const buttonNotallowed = document.querySelector(".button-notallowed");
 const cvcRemover = document.querySelectorAll(".cvc-remover");
+const confirmCheckbox = document.getElementById("confirmCheckbox");
 
 const initapp = function () {
   fullname.value = "";
@@ -18,35 +19,33 @@ const initapp = function () {
   YYexp.value = "";
   MMexp.value = "";
   cvcNumber.value = "";
+  confirmCheckbox.checked = false;
   btnSubmit.setAttribute("disabled", "");
 };
 
 initapp();
 
 const validation = function () {
-  const cardNumberArr = cardNumber.value.split("");
-  const cvcNumberArr = cvcNumber.value.split("");
-  const MMexpArr = MMexp.value.split("");
-  const YYexpArr = YYexp.value.split("");
-  const fullnameArr = fullname.value.split("");
-  // console.log(
-  //   `cardarr:${cardNumberArr.length}, cvcarr:${cvcNumberArr.length} fullnamearr: ${fullnameArr.length}`
-  // );
+  const fullnameReg = new RegExp(
+    "^[A-Z][a-z]{2,}\\s[A-Z][a-z]{2,}((\\s|-)[A-Z][a-z]{2,})?$"
+  );
+  const cardnumberReg = new RegExp("^[0-9]{16}$");
+  const MMexpReg = new RegExp("^(0|1)[0-9]$");
+  const YYexpReg = new RegExp("^[0-9]{2}$");
+  const cvcNumberReg = new RegExp("^[0-9]{3}$");
+
   if (
-    fullname.value !== "" &&
-    cardNumberArr.length === 16 &&
-    cvcNumberArr.length >= 2 &&
-    // tu jest błąd bo powinno być cvc === 3 ale z powodu że stan jest sprawdzany na moment klikniecia ostatniego przysiku na input cvc to stan wtedy wynosi 2 a nie 3, a z drugiej strony przy powtorej walidacji przy wcisakniu przycisku submit stan jest już aktualny i nie przechodzi walidacji. Moznaby to rozwiązać np checkboxem "czy potwierdzasz poprawność wprowadzonych danych?" i w momencie kliknięcia w niego aktualizować dane i wtedy puszczać walidacje.
-    MMexpArr.length === 2 &&
-    YYexpArr.length === 2
+    fullnameReg.test(fullname.value) &&
+    cardnumberReg.test(cardNumber.value) &&
+    MMexpReg.test(MMexp.value) &&
+    YYexpReg.test(YYexp.value) &&
+    cvcNumberReg.test(cvcNumber.value)
   ) {
     return true;
   }
 };
 
-cvcNumber.addEventListener("keydown", function () {
-  // console.log("keydown cvc");
-
+confirmCheckbox.addEventListener("click", function () {
   if (validation()) {
     btnSubmit.removeAttribute("disabled");
   }
