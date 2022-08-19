@@ -1,0 +1,58 @@
+@media (max-width: 81em) {
+  main {
+    padding: 0;
+  }
+
+  label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 63em) {
+  main {
+    overflow: scroll;
+    background-image: url("images/bg-main-mobile.png");
+    background-size: 60rem 20rem;
+  }
+  .app {
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+
+  .app-images {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .img-card-front {
+    transform: translate(-10%, -84%) scale(0.8);
+    z-index: 3;
+  }
+
+  .img-card-back {
+    transform: translate(10%, -30%) scale(0.8);
+  }
+
+  .app-form,
+  .app-form-complate {
+    transform: translateY(-60%);
+    width: 60%;
+  }
+}
+
+@media (max-width: 36em) {
+  .img-card-front {
+    transform: translate(-5%, -96%) scale(0.6);
+  }
+
+  .img-card-back {
+    transform: translate(5%, -30%) scale(0.6);
+  }
+
+  .app-form,
+  .app-form-complate {
+    width: 100%;
+  }
+}
